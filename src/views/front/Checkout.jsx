@@ -28,7 +28,7 @@ function Checkout() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm({
     mode: "onChange", //及時驗證
@@ -104,6 +104,7 @@ function Checkout() {
       // 重新取得購物車資料
       const cartRes = await axios.get(`${API_Base}/api/${API_Path}/cart`);
       setCart(cartRes.data.data);
+      alert(res.data.message);
     } catch (error) {
       console.log(error.response);
     } finally {
@@ -410,7 +411,11 @@ function Checkout() {
             ></textarea>
           </div>
           <div className="text-end">
-            <button type="submit" className="btn btn-danger">
+            <button
+              type="submit"
+              className="btn btn-danger"
+              disabled={!isValid}
+            >
               送出訂單
             </button>
           </div>
