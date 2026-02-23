@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 function FrontendLayout() {
   return (
@@ -6,9 +6,9 @@ function FrontendLayout() {
       <header>
         <nav className="navbar navbar-bark navbar-expand-lg">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/">
               <h2>LOGO</h2>
-            </Link>
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -23,33 +23,37 @@ function FrontendLayout() {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to="/">
+                  <NavLink
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/"
+                  >
                     <h4>首頁</h4>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/products">
+                  <NavLink className="nav-link" to="/products">
                     <h4>產品列表</h4>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/cart">
+                  <NavLink className="nav-link" to="/cart">
                     <h4>購物車</h4>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/checkout">
+                  <NavLink className="nav-link" to="/checkout">
                     <h4>結帳</h4>
-                  </Link>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" to="/login">
+                  <NavLink className="nav-link" to="/login">
                     <h4>登入</h4>
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
